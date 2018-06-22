@@ -1,0 +1,31 @@
+@charset "UTF-8";
+table{
+  border: 1px solid red;
+  margin: auto;
+  width: 50%;
+}
+
+td{
+  border: 1px solid red;
+  width: 50px;
+  height: 150px;
+  margin: auto;
+  text-align: center;
+  font-size: 125px;
+
+}
+body {
+  border-color: black;
+  font-size: 50px;
+}
+
+.grid-container {
+  display: grid;
+  grid-column-gap: 50px;
+}
+
+.grid-item {
+  color: white;
+  background-color: black;
+  text-align: left;
+}
