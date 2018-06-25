@@ -5,28 +5,34 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <link rel="stylesheet" href="/Users/newowner/desktop/tic-tac-toe/assets/styles/style.css">
+      <script src="/Users/newowner/desktop/tic-tac-toe/assets/scripts/index.js"></script>
+
     </head>
 
-    <body>
+    <body  onload="startGame()">
 
-  <table style="widtd:100%">
+  <table style="width:100%">
     <tr>
-      <td>A</td>
-      <td>B</td>
-      <td>C</td>
+      <td  class="box" id="square1" onclick='playerMove(this)'></td>
+      <td  class="box" id="square2" onclick='playerMove(this)'></td>
+      <td  class="box" id="square3" onclick='playerMove(this)'></td>
     </tr>
     <tr>
-      <td>D</td>
-      <td>E</td>
-      <td>F</td>
+      <td  class="box" id="square4" onclick='playerMove(this)'></td>
+      <td  class="box" id="square5" onclick='playerMove(this)'></td>
+      <td  class="box" id="square6" onclick='playerMove(this)'></td>
     </tr>
     <tr>
-      <td>G</td>
-      <td>H</td>
-      <td>I</td>
+      <td  class="box" id="square7" onclick='playerMove(this)'></td>
+      <td  class="box" id="square8" onclick='playerMove(this)'></td>
+      <td  class="box" id="square9" onclick='playerMove(this)'></td>
     </tr>
   </table>
+  <button id="restart" href ="javascript: startGame()">
 
+  <div id="text"> </div>
+
+<script src="/Users/newowner/desktop/tic-tac-toe/assets/scripts/index.js"></script>
 
     </body>
 </html>
