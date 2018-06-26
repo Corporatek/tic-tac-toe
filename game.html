@@ -3,7 +3,7 @@
     <head>
       <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
+      <link href="https://fonts.googleapis.com/css?family=Finger+Paint" rel="stylesheet">
       <link rel="stylesheet" href="/Users/newowner/desktop/tic-tac-toe/assets/styles/style.css">
       <script src="/Users/newowner/desktop/tic-tac-toe/assets/scripts/index.js"></script>
 
@@ -11,7 +11,9 @@
 
     <body  onload="startGame()">
 
-  <table style="width:100%">
+      <div id="title">Tic-Tac-Toe</div>
+
+  <table style="width:500px">
     <tr>
       <td  class="box" id="square1" onclick='playerMove(this)'></td>
       <td  class="box" id="square2" onclick='playerMove(this)'></td>
@@ -28,9 +30,10 @@
       <td  class="box" id="square9" onclick='playerMove(this)'></td>
     </tr>
   </table>
-  <button id="restart" href ="javascript: startGame()">
 
   <div id="text"> </div>
+  <button id="restart" onclick="startGame()">New Game</button>
+
 
 <script src="/Users/newowner/desktop/tic-tac-toe/assets/scripts/index.js"></script>
 

@@ -17,9 +17,10 @@ function setMessage(msg) {
 
 
 function playerMove(square) {
-  if (document.winner != null){
-    setMessage(document.turn + " already won.")
-  }else if(square.innerText == ''){
+  if (document.winner != null) {
+    setMessage(document.turn + "  won!")
+    alert(document.turn + " Wins!")
+  } else if(square.innerText == ''){
   square.innerText = document.turn;
   switchTurn();
 } else {
@@ -50,9 +51,12 @@ function checkForWinner(move) {
       checkRow(3, 6, 8, move) ||
       checkRow(1, 5, 9, move) ||
       checkRow(3, 5, 7, move)) {
-
+        result = true
       }
+      return result
 }
+
+
 
 function checkRow(a, b, c, move) {
   var result = false
@@ -68,4 +72,13 @@ function getBox(number) {
 
 function clearBox(number) {
   document.getElementById("square" + number).innerText = ""
+}
+
+// Below I am testing to see if this works for one box.
+function changeColor() {
+  var box = document.getElementById("square1")
+  if(box.innerText = "X") {
+    console.log("It worked")
+    document.getElementById("square1").css("background-color", "green")
+  }
 }

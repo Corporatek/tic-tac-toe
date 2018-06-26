@@ -1,22 +1,74 @@
 @charset "UTF-8";
+
 table{
-  border: 1px solid red;
-  margin: auto;
+  border: 1px solid white;
+  position: center;
+  color: white;
+  font-family: 'Finger Paint', cursive;
+  margin-top: 75px;
   width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
 }
+
 
 td{
-  border: 1px solid red;
-  width: 50px;
-  height: 150px;
-  margin: auto;
+  border: 1px solid white;
+  width: 100px;
+  height: 100px;
   text-align: center;
-  font-size: 125px;
-
+  font-size: 70px;
+  color: white;
+  margin:auto;
 }
+
 body {
-  border-color: black;
   font-size: 50px;
+  background-image: url("/Users/newowner/desktop/tic-tac-toe/cool-background.png");
+  background-size: cover;
+  background-position: center center;
+  background-size: auto 1300px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -10;
+  background-repeat: no-repeat;
+}
+
+button {
+  background-color: #008cba;
+  height: 50px;
+  width: 105px;
+  border-color: #008cba;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  margin-left: 45%;
+  margin-right: auto;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#title {
+  color: white;
+  font-size: 30px;
+  font-family: 'Finger Paint', cursive;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#text {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
 }
 
 .grid-container {
