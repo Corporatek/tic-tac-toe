@@ -53,13 +53,6 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
 }
 
-
-
-
-
-
-
 module.exports = {
-  addHandlers,
-
+  addHandlers
 }

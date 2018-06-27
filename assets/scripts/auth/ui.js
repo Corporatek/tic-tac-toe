@@ -1,8 +1,6 @@
 'use strict'
 
-// const store = require('/Users/newowner/desktop/tic-tac-toe/assets/scripts/store.js')
-
-console.log("Hi")
+const store = require('../store.js')
 
 const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
@@ -54,42 +52,6 @@ const signOutFailure = function (error) {
   console.log('signOutFailure ran. Error is :', error)
 }
 
-// Below is the intstructions for click events on the tic tac toe board
-
-
-// The below statement is adding an X to the element if there is nothing occupying the box and changing the
-// onlick attribute of each box to the myOFunction. If anything is in the box an alert will pop up saying
-// the box is taken
-var square = ""
-
-var openSquare = document.getElementById("square");
-
-
-function myOFunction() {
-    var openSquare = document.getElementById("square");
-    if(openSquare.classList.contains('taken') || openSquare.innerHTML.indexOf("X") !== -1 || openSquare.innerHTML.indexOf("O") !== -1 ) {
-          alert("Square is taken!")
-      } else {
-      document.getElementById("square").innerHTML = "O";
-      document.getElementById("square").setAttribute('onclick','myXFunction()');
-      document.getElementById("square").className = "taken";
-    }
-  }
-
-function myXFunction() {
-  var openSquare = document.getElementById("square");
-  if(openSquare.classList.contains('taken') || openSquare.innerHTML.indexOf("X") !== -1 || openSquare.innerHTML.indexOf("O") !== -1 ) {
-        alert("Square is taken!")
-    } else {
-    document.getElementById("square").innerHTML = "X";
-    document.getElementById("square").className = "taken";
-    document.getElementById("square").setAttribute('onclick','myXFunction()');
-  }
-}
-
-
-
-
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -98,7 +60,5 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure,
-  myXFunction,
-  myOFunction
+  signOutFailure
 }

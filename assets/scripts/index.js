@@ -1,5 +1,9 @@
 'use strict'
 
+const authEvents = require('./auth/events')
+authEvents.addHandlers()
+
+
 function startGame() {
 
 for(var i = 1; i <= 9; i++) {
@@ -82,3 +86,6 @@ function changeColor() {
     document.getElementById("square1").css("background-color", "green")
   }
 }
+
+// (module || {}).exports = EventEmitter;
+//  = console.log("Hi")
