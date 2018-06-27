@@ -53,6 +53,12 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
 }
 
+const logMove = () => {
+   move: document.turn,
+   location:
+
+}
+
 module.exports = {
   addHandlers
 }

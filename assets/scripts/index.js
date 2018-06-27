@@ -3,7 +3,6 @@
 const authEvents = require('./auth/events')
 authEvents.addHandlers()
 
-
 function startGame() {
 
 for(var i = 1; i <= 9; i++) {
@@ -14,6 +13,8 @@ for(var i = 1; i <= 9; i++) {
   document.winner = null
   setMessage("Player " + document.turn + " gets to start.")
 }
+
+
 
 function setMessage(msg) {
   document.getElementById("text").innerText = msg;
@@ -65,6 +66,9 @@ function checkForWinner(move) {
 function checkRow(a, b, c, move) {
   var result = false
   if(getBox(a) == move && getBox(b) == move && getBox(c) == move) {
+  document.getElementById("square" + a).style.color = "green"
+  document.getElementById("square" + b).style.color = "green"
+  document.getElementById("square" + c).style.color = "green"
   result = true
   }
   return result
@@ -76,6 +80,7 @@ function getBox(number) {
 
 function clearBox(number) {
   document.getElementById("square" + number).innerText = ""
+  document.getElementById("square" + number).style.color = "white"
 }
 
 // Below I am testing to see if this works for one box.
@@ -86,6 +91,8 @@ function changeColor() {
     document.getElementById("square1").css("background-color", "green")
   }
 }
+
+
 
 // (module || {}).exports = EventEmitter;
 //  = console.log("Hi")
