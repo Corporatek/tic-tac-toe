@@ -6,18 +6,47 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Finger+Paint" rel="stylesheet">
+      <script src="./assets/scripts/index.js"></script>
+
 
       <!-- Do not add `script` tags-->
-      <link rel="stylesheet" href="/Users/newowner/desktop/tic-tac-toe/assets/styles/style.css">
+      <link rel="stylesheet" href="./assets/styles/style.css">
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
     </head>
-    <body>
-      <h1>Tic Tac Toe!</h1>
+    <body onload="startGame()">
+      <nav>
+        Add Nav bar here
+        <!-- add sign out & change password button up top upon logging in -->
+      </nav>
+      <div id="game">
+            <div id="title">Tic-Tac-Toe</div>
 
-      <p id="message"></p>
+        <table style="width:500px">
+          <tr>
+            <td  class="box" id="square1" onclick='playerMove(this)'></td>
+            <td  class="box" id="square2" onclick='playerMove(this)'></td>
+            <td  class="box" id="square3" onclick='playerMove(this)'></td>
+          </tr>
+          <tr>
+            <td  class="box" id="square4" onclick='playerMove(this)'></td>
+            <td  class="box" id="square5" onclick='playerMove(this)'></td>
+            <td  class="box" id="square6" onclick='playerMove(this)'></td>
+          </tr>
+          <tr>
+            <td  class="box" id="square7" onclick='playerMove(this)'></td>
+            <td  class="box" id="square8" onclick='playerMove(this)'></td>
+            <td  class="box" id="square9" onclick='playerMove(this)'></td>
+          </tr>
+        </table>
 
-      <form id="sign-up" class="border">
+        <div id="text"> </div>
+        <button id="restart" onclick="startGame()">New Game</button>
+      </div>
+
+      <form id="sign-up" class="signup">
         <fieldset>
           <legend>Sign up!</legend>
           <input type="text" name="credentials[email]" placeholder="Email">
@@ -26,6 +55,8 @@
           <input type="submit" value="Sign up!">
         </fieldset>
       </form>
+
+      <button id="login" onclick="loadSignIn()">Sign In</button>
 
       <form id="sign-in" class="border">
         <fieldset>
@@ -52,6 +83,8 @@
           <input type="submit" value="Sign Out">
         </fieldset>
       </form>
+
+
 
 
     </body>

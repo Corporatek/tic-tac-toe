@@ -1,6 +1,7 @@
 'use strict'
 
-const authEvents = require('./auth/events')
+const authEvents = require('./auth/events.js')
+
 authEvents.addHandlers()
 
 function startGame() {
@@ -92,7 +93,20 @@ function changeColor() {
   }
 }
 
+function loadSignIn() {
+  var x = document.getElementById("sign-up");
+  var y = document.getElementById("sign-in");
+  var z = document.getElementById("login");
+
+  x.style.display = "none"
+  y.style.display = "block"
+  z.style.display = "none"
+}
 
 
-// (module || {}).exports = EventEmitter;
-//  = console.log("Hi")
+
+module.exports = {
+  playerMove,
+  getBox,
+  switchTurn
+}

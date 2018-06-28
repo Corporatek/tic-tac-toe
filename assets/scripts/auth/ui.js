@@ -6,6 +6,10 @@ const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
   $('#message').css('background-color', 'green')
   console.log('signUpSuccess ran. Data is :', data)
+  var x = document.getElementById("game");
+  var y = document.getElementById("sign-up");
+  y.style.display = "none"
+  x.style.display =  "block"
 }
 
 const signUpFailure = function (error) {
@@ -19,6 +23,10 @@ const signInSuccess = function (data) {
   $('#message').css('background-color', 'green')
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
+  var x = document.getElementById("game");
+  var y = document.getElementById("sign-in");
+  y.style.display = "none"
+  x.style.display =  "block"
 }
 
 const signInFailure = function (error) {
@@ -51,6 +59,9 @@ const signOutFailure = function (error) {
   $('#message').css('background-color', 'red')
   console.log('signOutFailure ran. Error is :', error)
 }
+
+
+
 
 module.exports = {
   signUpSuccess,
