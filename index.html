@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Finger+Paint" rel="stylesheet">
+
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+    </head>
+    <body>
+      
+      <div id="game">  <!--style="display: block;"> <!--Get rid of the style after-->
+            <div id="title">Tic-Tac-Toe</div>
+
+        <table style="width:500px">
+          <tr>
+            <td  class="box" id="square1" name="cells[0]"></td> <!-- change all id's to numbers starting from 0-->
+            <td  class="box" id="square2" name="cells[1]"></td>
+            <td  class="box" id="square3" name="cells[2]"></td>
+          </tr>
+          <tr>
+            <td  class="box" id="square4" name="cells[3]"></td>
+            <td  class="box" id="square5" name="cells[4]"></td>
+            <td  class="box" id="square6" name="cells[5]"></td>
+          </tr>
+          <tr>
+            <td  class="box" id="square7" name="cells[6]"></td>
+            <td  class="box" id="square8" name="cells[7]"></td>
+            <td  class="box" id="square9" name="cells[8]"></td>
+          </tr>
+        </table>
+
+        <div id="text"> </div>
+        <button id="restart">New Game</button>
+        <button id="btn1"> Sign out</button>
+        <button id="btn2"> Change-password</button>
+      </div>
+
+<!--- Sign in info starts here -->
+
+      <form id="sign-up" class="signup">
+        <fieldset>
+          <legend>Sign up!</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Password_confirmation">
+          <input type="submit" value="Sign up!">
+        </fieldset>
+      </form>
+
+      <button id="login">Sign In</button>
+
+      <form id="sign-in" class="border">
+        <fieldset>
+          <legend>Sign in!</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="submit" value="Sign in!">
+        </fieldset>
+      </form>
+
+      <form id="change-password" class="border">
+        <fieldset>
+          <legend>Change Password!</legend>
+          <input type="password" name="passwords[old]" placeholder="old password">
+          <input type="password" name="passwords[new]" placeholder="new password">
+
+          <input type="submit" value="Change Password">
+        </fieldset>
+        <button id='btn-3'>Done</button>
+      </form>
+
+      <form id="sign-out" class="border">
+        <fieldset>
+          <legend>Sign Out</legend>
+          <input type="submit" value="Sign Out">
+        </fieldset>
+        <button id='btn-3'>Done</button>
+      </form>
+
+    
+
+
+    </body>
+    <script>"/Users/newowner/Desktop/browser-template/assets/scripts/index.js"</script>
+</html>
