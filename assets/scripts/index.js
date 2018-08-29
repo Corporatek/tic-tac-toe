@@ -1,6 +1,8 @@
 'use strict'
 
-const events = require(./scripts/auth/events)
+const events = require('../scripts/auth/events')
+
+events.addHandlers()
 
 function startGame() {
 
