@@ -1,6 +1,8 @@
 'use strict'
 
 const events = require('../scripts/auth/events')
+const store = require('./store')
+const api = require('./auth/api')
 
 events.addHandlers()
 
@@ -12,6 +14,7 @@ for(var i = 1; i <= 9; i++) {
 
   document.turn = "X"
   document.winner = null
+  document.over = false
   setMessage("Player " + document.turn + " gets to start.")
 }
 
@@ -36,6 +39,8 @@ function switchTurn() {
   if(checkForWinner(document.turn)) {
     setMessage("Congrats " + document.turn + ", you won!")
     document.winner = document.turn
+    document.over = true
+    console.log(document.over)
   } else if(document.turn == "X") {
     document.turn = "O";
     setMessage("It's player " + document.turn + "'s turn now!")
@@ -44,6 +49,8 @@ function switchTurn() {
   }
   setMessage("It's player " + document.turn + "'s turn now!")
 }
+
+
 
 function checkForWinner(move) {
   var result = false
@@ -62,10 +69,14 @@ function checkForWinner(move) {
 
 
 
+
 function checkRow(a, b, c, move) {
   var result = false
   if(getBox(a) == move && getBox(b) == move && getBox(c) == move) {
   result = true
+  $("#square" + a).css("color", "green")
+  $("#square" + b).css("color", "green")
+  $("#square" + c).css("color", "green")
   }
   return result
 }
@@ -89,3 +100,27 @@ function loadSignIn() {
   z.style.display = 'none'
   x.style.display = 'block'
 }
+
+$('.box').on('click', function(){
+  // When the box is clicked , store the innerhtml into the cells array
+  console.log(this.innerHTML)
+
+  $(this).val(this.innerHTML)
+
+var data = {
+  "game": { 
+  "cell": {
+      "value": this.innerHTML,
+      "index": $(this).attr('data-cell-index')
+    },
+  "over": document.over
+  }
+
+}
+
+  console.log(data)
+  // console.log(store)
+  api.updateGame(data)  
+
+  // Where the innerhtml gets stored must be associated with the location of the box starting from 0
+})

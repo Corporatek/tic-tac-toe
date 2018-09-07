@@ -23,25 +23,26 @@
 
         <table style="width:500px">
           <tr>
-            <td  class="box" id="square1" onclick='playerMove(this)'></td>
-            <td  class="box" id="square2" onclick='playerMove(this)'></td>
-            <td  class="box" id="square3" onclick='playerMove(this)'></td>
+            <td  class="box" id="square1" onclick='playerMove(this)' data-cell-index="0"></td>
+            <td  class="box" id="square2" onclick='playerMove(this)' data-cell-index="1"></td>
+            <td  class="box" id="square3" onclick='playerMove(this)' data-cell-index="2"></td>
           </tr>
           <tr>
-            <td  class="box" id="square4" onclick='playerMove(this)'></td>
-            <td  class="box" id="square5" onclick='playerMove(this)'></td>
-            <td  class="box" id="square6" onclick='playerMove(this)'></td>
+            <td  class="box" id="square4" onclick='playerMove(this)' data-cell-index="3"></td>
+            <td  class="box" id="square5" onclick='playerMove(this)' data-cell-index="4"></td>
+            <td  class="box" id="square6" onclick='playerMove(this)' data-cell-index="5"></td>
           </tr>
           <tr>
-            <td  class="box" id="square7" onclick='playerMove(this)'></td>
-            <td  class="box" id="square8" onclick='playerMove(this)'></td>
-            <td  class="box" id="square9" onclick='playerMove(this)'></td>
+            <td  class="box" id="square7" onclick='playerMove(this)' data-cell-index="6"></td>
+            <td  class="box" id="square8" onclick='playerMove(this)' data-cell-index="7"></td>
+            <td  class="box" id="square9" onclick='playerMove(this)' data-cell-index="8"></td>
           </tr>
         </table>
 
         <div id="text"> </div>
-        <button id="restart" onclick="startGame()">New Game</button>
       </div>
+
+      <button id="restart" style="display: none;" onclick="startGame()">New Game</button>
 
       <form id="sign-up" class="signup">
         <fieldset>
@@ -80,6 +81,19 @@
           <input type="submit" value="Sign Out">
         </fieldset>
       </form>
+
+      <div id="game-history" style="display: none;">
+        <table id="game-info">
+          <tr>
+            <th>Game ID</th>
+            <th>Over?</th>
+          </tr>
+
+          <tr >
+          </tr>
+        </table>
+      </div>
+      <button id="getgame" style="display: none;">Show Games</button>
 
 
 

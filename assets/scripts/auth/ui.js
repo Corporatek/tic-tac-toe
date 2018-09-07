@@ -23,10 +23,12 @@ const signInSuccess = function (data) {
   $('#message').css('background-color', 'green')
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
-  var x = document.getElementById("game");
+  
   var y = document.getElementById("sign-in");
   y.style.display = "none"
-  x.style.display =  "block"
+  $('#restart').css('display', 'block')
+  $('#getgame').css('display', 'block')
+
 }
 
 const signInFailure = function (error) {
@@ -60,6 +62,41 @@ const signOutFailure = function (error) {
   console.log('signOutFailure ran. Error is :', error)
 }
 
+const gameCreateSuccess = function (data) {
+  console.log("successfully created new game", data)
+  // BELOW STORES THE NEWLY CREATED GAME INFO
+  store.game = data.game
+
+  var x = document.getElementById("game");
+  x.style.display =  "block"
+}
+
+const gameCreateFailure = function (error) {
+  console.log("Failed to create new game")
+}
+
+const getGamesSuccess = function (data) {
+  console.log("successfully got the last 5 games: ", data)
+  // BELOW STORES THE NEWLY CREATED GAME INFO
+  console.log(data.games[0])
+
+for (var i = 0; i < data.games.length; i++){
+
+  $('#game-info').append("<tr><td id="+ "game-id" + ">"+ data.games[i].id +"</td>" + "<td id="+ "game-over" + ">"+ data.games[i].over +"</td></tr>")
+
+  // Add function to determine who the winner is.
+  // $('#game-id').append("<td id="+ "game-id" + ">"+ data.games[i].id +"</td>")
+
+}
+
+
+
+
+}
+
+const getGamesFailure = function (error) {
+  console.log("Failed to get games")
+}
 
 
 
@@ -71,5 +108,9 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  gameCreateSuccess,
+  gameCreateFailure,
+  getGamesFailure,
+  getGamesSuccess
 }
